@@ -11,7 +11,7 @@ class ContactPage extends StatefulWidget {
 }
 
 class _ContactPageState extends State<ContactPage> {
-  List<dynamic> _contacts = [
+  final List<dynamic> _contacts = [
     {
       'name': 'John',
       'avatar': 'assets/images/avatar-1.png',
@@ -44,23 +44,23 @@ class _ContactPageState extends State<ContactPage> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        title: Text('Contacts', style: TextStyle(color: Colors.black),),
-        leading: BackButton(color: Colors.black,),
+        title: const Text('Contacts', style: TextStyle(color: Colors.black),),
+        leading: const BackButton(color: Colors.black,),
         bottom: PreferredSize(
-          preferredSize: Size.fromHeight(50),
+          preferredSize: const Size.fromHeight(50),
           child: FadeInDown(
-            duration: Duration(milliseconds: 500),
+            duration: const Duration(milliseconds: 500),
             child: Container(
               height: 40,
-              margin: EdgeInsets.only(bottom: 10),
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              margin: const EdgeInsets.only(bottom: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: TextField(
                 cursorColor: Colors.black,
                 decoration: InputDecoration(
-                  contentPadding: EdgeInsets.symmetric(vertical: 10),
-                  prefixIcon: Icon(Icons.search, color: Colors.grey,),
+                  contentPadding: const EdgeInsets.symmetric(vertical: 10),
+                  prefixIcon: const Icon(Icons.search, color: Colors.grey,),
                   hintText: 'Search contacts',
-                  hintStyle: TextStyle(color: Colors.grey),
+                  hintStyle: const TextStyle(color: Colors.grey),
                   filled: true,
                   fillColor: Colors.grey[200],
                   border: OutlineInputBorder(
@@ -77,13 +77,13 @@ class _ContactPageState extends State<ContactPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            SizedBox(height: 50,),
+            const SizedBox(height: 50,),
             FadeInUp(
-              duration: Duration(milliseconds: 500),
+              duration: const Duration(milliseconds: 500),
               child: Container(
                 width: double.infinity,
                 height: 300,
-                padding: EdgeInsets.all(90.0),
+                padding: const EdgeInsets.all(90.0),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   border: Border.all(color: Colors.grey.shade200, width: 1.0),
@@ -95,22 +95,22 @@ class _ContactPageState extends State<ContactPage> {
                         initialDelay: Duration(milliseconds: i.toInt())
                       )
                       .next(
-                        wait: Duration(milliseconds: 1000),
+                        wait: const Duration(milliseconds: 1000),
                         widget: AnimatedAlignPositioned(
                           dx: 0,
                           dy: 150,
-                          duration: Duration(seconds: 1),
+                          duration: const Duration(seconds: 1),
                           rotateDegrees: 0,
                           touch: Touch.middle,
                           child: user(0, i),
                         ),
                       )
                       .next(
-                        wait: Duration(seconds: 2),
+                        wait: const Duration(seconds: 2),
                         widget: AnimatedAlignPositioned(
                           dx: i / 360,
                           dy: 150,
-                          duration: Duration(seconds: 1),
+                          duration: const Duration(seconds: 1),
                           rotateDegrees: i,
                           touch: Touch.middle,
                           child: user(0, i),
@@ -120,9 +120,9 @@ class _ContactPageState extends State<ContactPage> {
                 ),
               ),
             ),
-            SizedBox(height: 80,),
+            const SizedBox(height: 80,),
             FadeInRight(
-              duration: Duration(milliseconds: 500),
+              duration: const Duration(milliseconds: 500),
               child: Padding(
                 padding: const EdgeInsets.only(left: 20.0, bottom: 15.0, top: 10.0),
                 child: Text('Most Recent', style: TextStyle(fontSize: 16, color: Colors.grey.shade900, fontWeight: FontWeight.w500),),
@@ -130,7 +130,7 @@ class _ContactPageState extends State<ContactPage> {
             ),
             Container(
               height: 90,
-              padding: EdgeInsets.only(left: 20),
+              padding: const EdgeInsets.only(left: 20),
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: _contacts.length,
@@ -149,7 +149,7 @@ class _ContactPageState extends State<ContactPage> {
                         );
                       },
                       child: Container(
-                        margin: EdgeInsets.only(right: 20),
+                        margin: const EdgeInsets.only(right: 20),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
@@ -158,8 +158,8 @@ class _ContactPageState extends State<ContactPage> {
                               backgroundColor: Colors.blueGrey[100],
                               backgroundImage: AssetImage(_contacts[index]['avatar']),
                             ),
-                            SizedBox(height: 10,),
-                            Text(_contacts[index]['name'], style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),),
+                            const SizedBox(height: 10,),
+                            Text(_contacts[index]['name'], style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),),
                           ],
                         ),
                       ),
@@ -168,9 +168,9 @@ class _ContactPageState extends State<ContactPage> {
                 },
               ),
             ),
-            SizedBox(height: 30,),
+            const SizedBox(height: 30,),
             FadeInRight(
-              duration: Duration(milliseconds: 500),
+              duration: const Duration(milliseconds: 500),
               child: Padding(
                 padding: const EdgeInsets.only(left: 20.0, bottom: 15.0, top: 10.0),
                 child: Text('All Contacts', style: TextStyle(fontSize: 16, color: Colors.grey.shade900, fontWeight: FontWeight.w500),),
@@ -178,15 +178,15 @@ class _ContactPageState extends State<ContactPage> {
             ),
             Container(
               height: MediaQuery.of(context).size.height - 200,
-              padding: EdgeInsets.only(left: 20),
+              padding: const EdgeInsets.only(left: 20),
               child: ListView.builder(
-                physics: BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 itemCount: _contacts.length,
                 itemBuilder: (context, index) {
                   return FadeInRight(
                     duration: Duration(milliseconds: (index * 100) + 500),
                     child: Container(
-                      margin: EdgeInsets.only(bottom: 20),
+                      margin: const EdgeInsets.only(bottom: 20),
                       child: Row(
                         children: <Widget>[
                           Row(
@@ -196,13 +196,13 @@ class _ContactPageState extends State<ContactPage> {
                                 backgroundColor: Colors.red[100],
                                 backgroundImage: AssetImage(_contacts[index]['avatar']),
                               ),
-                              SizedBox(width: 10,),
-                              Text(_contacts[index]['name'], style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),),
+                              const SizedBox(width: 10,),
+                              Text(_contacts[index]['name'], style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),),
                             ],
                           ),
-                          Spacer(),
+                          const Spacer(),
                           IconButton(
-                            icon: Icon(Icons.arrow_forward_ios, color: Colors.black, size: 15,),
+                            icon: const Icon(Icons.arrow_forward_ios, color: Colors.black, size: 15,),
                             onPressed: () {},
                           ),
                         ],
@@ -221,7 +221,7 @@ class _ContactPageState extends State<ContactPage> {
   user(int index, double number) {
     index = number ~/ 60;
     return FadeInRight(
-      delay: Duration(seconds: 1),
+      delay: const Duration(seconds: 1),
       duration: Duration(milliseconds: (index * 100) + 500),
       child: GestureDetector(
         onTap: () {
@@ -235,7 +235,7 @@ class _ContactPageState extends State<ContactPage> {
           );
         },
         child: Container(
-          margin: EdgeInsets.only(right: 20),
+          margin: const EdgeInsets.only(right: 20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
