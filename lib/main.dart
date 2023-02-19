@@ -30,12 +30,7 @@ class _HomePageState extends State<HomePage> {
   ];
 
   final List<dynamic> _transactions = [
-    ['Amazon', 'https://img.icons8.com/color/2x/amazon.png', '6:25pm', '\$8.90'],
-    ['Cash from ATM', 'https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/2x/external-atm-banking-and-finance-kiranshastry-lineal-color-kiranshastry.png', '5:50pm', '\$200.00'],
-    ['Netflix', 'https://img.icons8.com/color-glass/2x/netflix.png', '2:22pm', '\$13.99'],
-    ['Apple Store', 'https://img.icons8.com/color/2x/mac-os--v2.gif', '6:25pm', '\$4.99'],
-    ['Cash from ATM', 'https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/2x/external-atm-banking-and-finance-kiranshastry-lineal-color-kiranshastry.png', '5:50pm', '\$200.00'],
-    ['Netflix', 'https://img.icons8.com/color-glass/2x/netflix.png', '2:22pm', '\$13.99']
+    ['Amazon', '../assets/icons/amazon.png', '6:25pm', '\$8.90'],
   ];
 
   @override
@@ -81,6 +76,7 @@ class _HomePageState extends State<HomePage> {
         ],
         borderRadius: BorderRadius.circular(30),
       ),
+      //side bar
       drawer: SafeArea(
         child: Container(
           padding: const EdgeInsets.only(top: 20),
@@ -177,7 +173,7 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
               ),
-              actions: [
+              /*actions: [
                 IconButton(
                   icon: Icon(Iconsax.notification, color: Colors.grey.shade700),
                   onPressed: () {},
@@ -186,7 +182,7 @@ class _HomePageState extends State<HomePage> {
                   icon: Icon(Iconsax.more, color: Colors.grey.shade700),
                   onPressed: () {},
                 ),
-              ],
+              ],*/
               shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(40),
@@ -367,7 +363,7 @@ class _HomePageState extends State<HomePage> {
                                 children: [
                                   Row(
                                     children: [
-                                      Image.network(_transactions[index][1], width: 50, height: 50,),
+                                      Image.asset("assets/icons/amazon.png", width: 35, height: 35,),
                                       const SizedBox(width: 15,),
                                       Column(
                                         crossAxisAlignment: CrossAxisAlignment.start,
